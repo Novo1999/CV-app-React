@@ -1,0 +1,384 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+body {
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(7, 58, 187, 1) 100%
+  );
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  width: 100%;
+}
+
+.app {
+  width: 80rem;
+  height: 55rem;
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  font-weight: 700;
+}
+
+.header {
+  grid-column: 1 / 3;
+  grid-row: 1;
+  height: 2.5rem;
+  justify-self: center;
+  color: white;
+}
+
+.collapse {
+  display: none !important;
+}
+.general input:not(:nth-child(6)) {
+  text-transform: capitalize;
+}
+::placeholder {
+  color: #f5f5f5cc;
+}
+.general,
+.educational,
+.practical {
+  //   color: aliceblue;
+  display: grid;
+  height: 15rem;
+
+  input:not([type="submit"]) {
+    border-radius: 0.5rem;
+    font-weight: 700;
+    border: 1px solid white;
+    outline: none;
+    background: transparent;
+    color: white;
+    padding-left: 10px;
+  }
+  .headline {
+    justify-self: center;
+    position: relative;
+    top: 10px;
+    display: flex;
+    width: 13.5rem;
+    left: 1rem;
+    justify-content: space-between;
+    color: tomato;
+
+    p {
+      width: 20px;
+      height: 23px;
+      cursor: pointer;
+      border: 1px solid black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: aliceblue;
+      color: black;
+      box-shadow: 1px 1px 4px 1px black;
+    }
+    p:hover {
+      transform: translateY(-2px);
+      transition: 0.2s all linear;
+      color: white;
+      background-color: black;
+    }
+  }
+  .xp {
+    position: relative;
+    left: 3rem;
+  }
+  form {
+    position: relative;
+    left: 8rem;
+    bottom: 2rem;
+    display: grid;
+    grid-template-rows: 1rem;
+    width: 25rem;
+
+    label {
+      font-size: 15px;
+      color: white;
+      padding-left: 5px;
+    }
+    label:nth-child(1) {
+      position: relative;
+      bottom: 5px;
+    }
+    label:nth-child(3) {
+      position: relative;
+      top: 5px;
+    }
+    label:nth-child(5) {
+      position: relative;
+      top: 5px;
+    }
+    input[type="submit"] {
+      width: 60px;
+      position: relative;
+      top: 10px;
+      justify-self: center;
+      cursor: pointer;
+      background: orangered;
+      border: none;
+      border-radius: 10px;
+    }
+    input[type="submit"]:hover {
+      color: white;
+      background-color: black;
+      transition: linear 0.2s all;
+    }
+    button[type="button"] {
+      width: 60px;
+      height: 25px;
+      position: absolute;
+      cursor: pointer;
+      left: 17rem;
+      top: 9.68rem;
+      border-radius: 8px;
+      font-weight: 700;
+      background: orangered;
+      border: none;
+      border-radius: 10px;
+    }
+    button[type="button"]:hover {
+      color: white;
+      background-color: black;
+      transition: linear 0.2s all;
+    }
+  }
+  .invisible {
+    visibility: hidden;
+  }
+}
+
+.educational {
+  grid-column: 1;
+  grid-row: 3;
+  height: 18rem;
+  position: relative;
+  //   bottom: 3rem;
+  button[type="button"] {
+    width: 60px;
+    height: 25px;
+    position: absolute;
+    cursor: pointer;
+    left: 17rem;
+    top: 12.55rem !important;
+    border-radius: 8px;
+    font-weight: 700;
+    background: orangered;
+    border: none;
+    border-radius: 10px;
+  }
+  button[type="button"]:hover {
+    color: white;
+    background-color: black;
+    transition: linear 0.2s all;
+  }
+}
+.practical {
+  grid-column: 1;
+  grid-row: 4;
+  position: relative;
+  //   bottom: 3rem;
+  height: 21rem;
+  button[type="button"] {
+    width: 60px;
+    height: 25px;
+    position: absolute;
+    cursor: pointer;
+    left: 17rem;
+    top: 15rem !important;
+    border-radius: 8px;
+    font-weight: 700;
+    background: orangered;
+    border: none;
+    border-radius: 10px;
+  }
+}
+.cv {
+  grid-column: 2;
+  grid-row: 2 / 5;
+  height: 50rem;
+  margin-top: 2rem;
+  // box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.356);
+  background-color: aliceblue;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  padding: 0px 10px 0px 10px;
+  span {
+    color: #726eff;
+  }
+}
+.save {
+  width: 100px;
+  justify-self: center;
+  position: relative;
+  bottom: 3.5rem;
+  cursor: pointer;
+  left: 57rem;
+  background-color: #726eff;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 0 3px 1px black;
+  animation: slide-Up 0.2s ease-in;
+  font-size: 18px;
+  color: aliceblue;
+}
+.save:hover {
+  background-color: purple;
+  transition: 0.3s linear all;
+}
+@keyframes slide-Up {
+  0% {
+    bottom: 3rem;
+  }
+  100% {
+    bottom: 3.5rem;
+  }
+}
+.general-section {
+  //   grid-column: 1 / 3;
+  grid-row: 1;
+  justify-self: center;
+  text-align: center;
+  margin-top: 30px;
+  // background-color: lightblue;
+  padding: 10px;
+  height: 17rem;
+  width: 38.8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  p {
+    font-weight: 900;
+    font-size: 24px;
+    margin-top: 30px;
+  }
+  h1,
+  p {
+    text-align: left;
+  }
+}
+.educational-section {
+  margin-top: 2rem;
+  grid-row: 2;
+  span {
+    margin-left: 10px;
+  }
+  hr {
+    width: 37rem;
+    margin-left: 10px;
+    position: relative;
+    top: 10px;
+  }
+  h3 {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+  p,
+  h3 {
+    margin-left: 10px;
+    font-weight: 700;
+    font-size: 22px;
+  }
+  p {
+    margin-top: 20px;
+  }
+}
+.company-section {
+  margin-top: -3rem;
+  grid-row: 3;
+  span {
+    margin-left: 10px;
+  }
+  hr {
+    margin-bottom: 10px;
+    margin-top: 10px;
+    width: 37rem;
+    margin-left: 10px;
+  }
+  p,
+  h3 {
+    margin-left: 10px;
+    font-weight: 700;
+    font-size: 22px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+@media screen and (max-width: 650px) {
+  .header {
+    margin-left: 4rem;
+  }
+  html {
+    width: 1px;
+  }
+  body {
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+    scroll-behavior: smooth;
+  }
+  .app {
+    width: 15rem;
+  }
+  .cv {
+    grid-column: 1;
+    grid-row: 5;
+    position: relative;
+    left: 5rem;
+    width: 30.5rem;
+    height: 50rem;
+  }
+  .educational-section hr,
+  .company-section hr {
+    width: 28rem;
+  }
+  .general-section {
+    position: relative;
+    right: 4.5rem;
+    h1 {
+      font-size: 24px;
+      line-height: 10px;
+    }
+    p {
+      font-size: 18px;
+      line-height: 20px;
+    }
+    h1,
+    p {
+      text-align: left;
+      margin-left: 5rem;
+    }
+  }
+  .save {
+    left: -13rem;
+    top: 100rem;
+  }
+  .educational,
+  .general {
+    .headline {
+      margin-left: 10rem;
+    }
+  }
+  .xp {
+    // left: 5rem !important;
+    margin-left: 5rem;
+  }
+  .practical p {
+    position: relative;
+    left: 3rem;
+  }
+}
